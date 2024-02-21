@@ -5,9 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Piedra, Papel o Tijera</title>
         <script>
+            // generarNumeroAleatorio
+            function generarNumeroAleatorio(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
             // 1 es Piedra, 2 es Papel y 3 es Tijera
             let jugador;
-            let pc = 3;
+            let pc = generarNumeroAleatorio(3, 1);
             // elección del jugador
             jugador = prompt("Elige: 1 para Piedra, 2 para Papel o 3 para Tijerra");
             if (jugador == 1) {
