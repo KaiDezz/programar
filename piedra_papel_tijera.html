@@ -9,30 +9,27 @@
             function generarNumeroAleatorio(min, max) {
                 return Math.floor(Math.random() * (max - min + 1) + min);
             }
+            // fubcion eleccion
+            function eleccion(jugada) {
+                let resultado = "";
+                if (jugada == 1) {
+                    resultado = "🪨";
+                } else if (jugada == 2) {
+                    resultado = "📄";
+                } else if (jugada == 3) {
+                    resultado = "✂️";
+                } else {
+                    resultado = "💀";
+                }
+                return resultado;
+            }
             // 1 es Piedra, 2 es Papel y 3 es Tijera
             let jugador;
             let pc = generarNumeroAleatorio(3, 1);
             // elección del jugador
             jugador = prompt("Elige: 1 para Piedra, 2 para Papel o 3 para Tijerra");
-            if (jugador == 1) {
-                alert("Elegiste 🪨");
-            } else if (jugador == 2) {
-                alert("Elegiste 📄");
-            } else if (jugador == 3) {
-                alert("Elegiste ✂️");
-            } else {
-                alert("Elegiste perder");
-            }
-            //elección pc
-            if (pc == 1) {
-                alert("PC elige 🪨");
-            } else if (pc == 2) {
-                alert("PC elige 📄");
-            } else if (pc == 3) {
-                alert("PC elige ✂️");
-            } else {
-                alert("PC elige perder");
-            }
+            alert("Tu eliges: " + eleccion(jugador));
+            alert("PC elige: " + eleccion(pc));
             // Combate
             if (jugador == pc) {
                 alert("Empate");
